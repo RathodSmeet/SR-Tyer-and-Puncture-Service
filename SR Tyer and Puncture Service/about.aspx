@@ -82,7 +82,7 @@
 
 
         <!-- Single Page Header start -->
-        <div class="container-fluid page-header py-5">
+       <div class="container-fluid page-header py-5">
             <h1 class="text-center text-white display-6">About</h1>
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -153,10 +153,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6">
-                            <div class="position-relative mx-auto">
-                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
-                            </div>
+                            
                         </div>
                         <div class="col-lg-3">
                             <div class="d-flex justify-content-end pt-3">

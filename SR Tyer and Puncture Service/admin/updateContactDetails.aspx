@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="viewcontact.aspx.cs" Inherits="SR_Tyer_and_Puncture_Service.admin.viewcontact" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="updateContactDetails.aspx.cs" Inherits="SR_Tyer_and_Puncture_Service.admin.updateContactDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,8 +17,6 @@
     />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-
      <div id="wrapper">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="adjust-nav">
@@ -74,59 +72,47 @@
         <div id="page-inner">
           <div class="row">
             <div class="col-md-12">
-              <h2>View Contact Details</h2>
+              <h2>Edit Contact Details</h2>
             </div>
           </div>
           <hr />
-             <div style="margin:50px; margin-left:210px;">
-    <center>
-     
-    <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" Width="100%" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" CssClass="text-center" >
-        <AlternatingRowStyle BackColor="#CCCCCC" />
-        <Columns>
-            <asp:TemplateField HeaderText="ID">
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Name">
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("name") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Email">
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("email") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            
-            <asp:TemplateField HeaderText="Description">
-                <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("message") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-             <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:Button ID="btnUpdate" runat="server" CommandArgument='<%# Bind("id") %>' Text="Edit"  CssClass="btn btn-grd-success" OnCommand="btnUpdate_Command" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
-    </asp:GridView>
-       </center>
-        </div>
+             <div>
+                 <form class="form-horizontal" role="form">
+                     <div class="form-group d-flex fg">
+                            <label for="name" class="col-sm-3 control-label text-start h4"> Name</label>
+                            <div class="col-sm-9">
+                                <asp:TextBox ID="name" CssClass="form-control fc" runat="server"
+                                    placeholder="Enter Your Name" MaxLength="40"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="NameValidator" runat="server" ControlToValidate="name"
+                                    ErrorMessage="Enter Your Name" ForeColor="Red" Display="Dynamic" SetFocusOnError="True">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex fg">
+                            <label for="email" class="col-sm-3 control-label text-start h4"> Email</label>
+                            <div class="col-sm-9">
+                                <asp:TextBox ID="email" CssClass="form-control fc" runat="server"
+                                    placeholder="Enter Your Email" TextMode="Email" MaxLength="50"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="EmailValidator" runat="server" ControlToValidate="email"
+                                    ErrorMessage="Enter Your Email" ForeColor="Red" Display="Dynamic" SetFocusOnError="True">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                         <div class="form-group d-flex fg">
+                            <label for="message" class="col-sm-3 control-label text-start h4">Message</label>
+                            <div class="col-sm-9">
+                                <asp:TextBox ID="message" CssClass="form-control fc" runat="server"
+                                    placeholder="Enter Your Message" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex fg">
+                            <div style="margin: 40px 280px">
+                                <asp:Button ID="add" CssClass="btn btn-primary" runat="server" Text="Update" Width="500px"
+                                    Font-Bold="True" Font-Size="25px" OnClick="update_Click" />
+                            </div>
+                        </div>
+                    </form>
+                 </div>
         </div>
       </div>
     </div>

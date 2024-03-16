@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="viewcontact.aspx.cs" Inherits="SR_Tyer_and_Puncture_Service.admin.viewcontact" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="verify.aspx.cs" Inherits="SR_Tyer_and_Puncture_Service.admin.verify" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +17,7 @@
     />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-
-     <div id="wrapper">
+    <div id="wrapper">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="adjust-nav">
           <div class="navbar-header">
@@ -74,59 +72,21 @@
         <div id="page-inner">
           <div class="row">
             <div class="col-md-12">
-              <h2>View Contact Details</h2>
+              <h2>Verify OTP</h2>
             </div>
           </div>
           <hr />
-             <div style="margin:50px; margin-left:210px;">
-    <center>
-     
-    <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" Width="100%" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" CssClass="text-center" >
-        <AlternatingRowStyle BackColor="#CCCCCC" />
-        <Columns>
-            <asp:TemplateField HeaderText="ID">
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Name">
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("name") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Email">
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("email") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            
-            <asp:TemplateField HeaderText="Description">
-                <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("message") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-             <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:Button ID="btnUpdate" runat="server" CommandArgument='<%# Bind("id") %>' Text="Edit"  CssClass="btn btn-grd-success" OnCommand="btnUpdate_Command" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
-    </asp:GridView>
-       </center>
-        </div>
+            <form>
+                 <div>
+                     <h1 style="display:flex; align-self:center; justify-content:center;">Enter OTP</h1>
+                     <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" ></asp:TextBox>
+                      <br />
+                     <br />
+                     <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"  />
+                        <br />
+                        <br />
+                    </div>
+            </form>
         </div>
       </div>
     </div>

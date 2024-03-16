@@ -34,21 +34,24 @@ namespace SR_Tyer_and_Puncture_Service
 
             try
             {
+                con.Open();
                 cmd.ExecuteNonQuery();
-               
+                Response.Write("<script>alert('Message Sent Successfully..')</script>");
+                Response.Redirect("default.aspx");
             }
             catch (SqlException se)
             {
                 // Handle the exception
                 Console.WriteLine(se.Message);
+
             }
             finally
             {
                 con.Close();
             }
 
-            Response.Write("<script>alert('Message Sent Successfully..')</script>");
-            Response.Redirect("default.aspx");
+            //Response.Write("<script>alert('Message Sent Successfully..')</script>");
+            //Response.Redirect("default.aspx");
         }
     }
 }

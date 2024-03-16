@@ -715,8 +715,12 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mx-auto">
-                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                                <form>
+                                     <asp:TextBox ID="email" class="form-control  border-0 w-100 py-3 px-4 rounded-pill" runat="server" placeholder="Enter Your Email" TextMode="Email" ></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
+                                     <asp:Button ID="Button1" runat="server" Text="Subscribe Now" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;" OnClick="Button1_Click"  />
+                                  
+                                </form>
                             </div>
                         </div>
                         <div class="col-lg-3">

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SR_Tyer_and_Puncture_Service
+namespace SR_Tyer_and_Puncture_Service.admin
 {
 
 
-    public partial class Default
+    public partial class updateSubscriberDetails
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace SR_Tyer_and_Puncture_Service
         protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// EmailValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailValidator;
 
         /// <summary>
-        /// Button1 control.
+        /// add control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button add;
     }
 }
